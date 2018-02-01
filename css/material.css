@@ -1,0 +1,435 @@
+@charset "UTF-8";
+/*
+ * Copyright (C) 2018 Simão Gomes Viana
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *    http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+/*
+ * Global styles
+ */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  user-select: none;
+  cursor: default;
+  font-size: 14px;
+  -webkit-tap-highlight-color: transparent;
+}
+
+p {
+  max-width: 60%;
+  min-width: 240px;
+}
+
+::-webkit-scrollbar {
+  width: 3px;
+  height: 3px;
+}
+
+::-webkit-scrollbar-button {
+  max-height: 8px;
+  max-width: 8px;
+}
+
+::-webkit-scrollbar-track {
+
+}
+
+::-webkit-scrollbar-track-piece {
+
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 2px;
+  background-color: rgba(127, 127, 127, 0.36);
+}
+
+::-webkit-scrollbar-corner {
+
+}
+
+::-webkit-resizer {
+
+}
+
+::-webkit-scrollbar,
+::-webkit-scrollbar-button,
+::-webkit-scrollbar-track-piece {
+  background-color: transparent;
+}
+
+/*
+ * Elements
+ */
+
+.material.actionbar {
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: #212121;
+  box-shadow: 0 1px 3px 3px rgba(0, 0, 0, 0.2);
+}
+
+.material.actionbar-title {
+  margin-left: 16px;
+  font-weight: 500;
+  font-size: 16px;
+  color: #fff;
+  line-height: 56px;
+  white-space: nowrap;
+}
+
+.material.button,
+.material.dialog-button-right,
+.material.dialog-button-left {
+  display: inline-block;
+  margin: 8px 8px 8px 0;
+  text-transform: uppercase;
+  border-radius: 3px;
+  height: 32px;
+  line-height: 32px;
+  transition: background-color 180ms ease-in-out, box-shadow 180ms ease-in-out;
+  padding: 0 8px;
+  font-weight: 500;
+  font-size: 12px;
+}
+
+.material.button.flat,
+.material.dialog-button-right,
+.material.dialog-button-left {
+  background-color: transparent;
+  color: #1976D2;
+}
+
+.material.button.flat:hover,
+.material.dialog-button-right:hover,
+.material.dialog-button-left:hover {
+  background-color: rgba(0, 0, 0, 0.08);
+}
+
+.material.button.flat:active,
+.material.dialog-button-right:active,
+.material.dialog-button-left:active {
+  background-color: rgba(0, 0, 0, 0.16);
+}
+
+.material.button.colored {
+  background-color: #1976D2;
+  box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.4);
+  color: #ffffff;
+}
+
+.material.button.colored:hover {
+  background-color: #1E88E5;
+  box-shadow: 0 2px 4px 1px rgba(0, 0, 0, 0.4);
+}
+
+.material.button.colored:active {
+  background-color: #1565C0;
+  box-shadow: 0 1px 2px 0px rgba(0, 0, 0, 0.4);
+}
+
+.material.tabber {
+  display: block;
+  width: 100%;
+  overflow-x: auto;
+  white-space: nowrap;
+  line-height: 40px;
+  font-size: 12px;
+  font-weight: 500;
+  color: #ffffff;
+  text-transform: uppercase;
+}
+
+.material.tab {
+  display: inline-block;
+  min-width: 92px;
+  padding: 0 16px;
+  height: 40px;
+  text-align: center;
+  transition: background-color 180ms ease-in-out, color 120ms ease-in-out;
+  margin: 0;
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.material.tab.active {
+  color: rgba(255, 255, 255, 0.96);
+  border-collapse: separate;
+  border-bottom-color: #ffffff;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+}
+
+.material.tabber.dark > * > .material.tab:hover {
+  background-color: rgba(255, 255, 255, 0.08);
+}
+
+.material.tabber.dark > * > .material.tab:active {
+  background-color: rgba(255, 255, 255, 0.16);
+}
+
+.material.tabber.light > * > .material.tab:hover {
+  background-color: rgba(0, 0, 0, 0.08);
+}
+
+.material.tabber.light > * > .material.tab:active {
+  background-color: rgba(0, 0, 0, 0.16);
+}
+
+.material.page {
+  display: none;
+}
+
+.material.page.active {
+  display: block;
+}
+
+.material.textfield {
+  background-color: transparent;
+  outline: none;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-collapse: separate;
+  border-bottom-color: rgba(127, 127, 127, 0.2);
+  border-bottom-width: 2px;
+  height: 24px;
+  font-size: 14px;
+  font-weight: 400;
+  transition: border-bottom-color 180ms ease-in-out;
+}
+
+.material.textfield::placeholder {
+  font-size: 14px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+}
+
+.material.textfield:hover {
+  border-bottom-color: rgba(127, 127, 127, 0.1);
+}
+
+.material.textfield:active {
+  border-bottom-color: rgba(127, 127, 127, 0.3);
+}
+
+.material.textfield:focus {
+  border-bottom-color: #1976D2;
+}
+
+.material.switch-container {
+  display: block;
+  margin: 12px 8px 8px 0;
+  line-height: 18px;
+  height: 18px;
+}
+
+.material.switch-container > * {
+  display: inline-block;
+  vertical-align: middle;
+  margin: 6px;
+}
+
+.material.switch {
+  display: inline-block;
+  width: 32px;
+  height: 14px;
+  border-radius: 7px;
+  background-color: rgba(127, 127, 127, 0.42);
+  transition: background-color 60ms ease-in-out;
+}
+
+.material.switch.enabled {
+  background-color: #90CAF9;
+}
+
+.material.switch.enabled > .material.switch-thumb {
+  background-color: #1E88E5;
+}
+
+.material.switch-thumb {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background-color: #757575;
+  transform: translateY(-2px);
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.4);
+  transition: box-shadow 100ms ease-in-out,
+              transform 60ms ease-in-out,
+              background-color 60ms ease-in-out;
+}
+
+.material.switch-thumb:hover {
+  box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.4);
+}
+
+.material.category-header {
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: 600;
+  color: #1976D2;
+  margin: 8px 0;
+}
+
+.material.dialog-background {
+  display: flex;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background-color: transparent;
+  transition: background-color 180ms ease-in-out;
+}
+
+.material.dialog-background.static {
+  background-color: rgba(0, 0, 0, 0.64);
+}
+
+.material.dialog-container {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.material.dialog {
+  display: flex;
+  flex-direction: column;
+  width: 320px;
+  min-height: 120px;
+  background-color: #ffffff;
+  border-radius: 4px;
+  box-shadow: 0 0 20px 4px rgba(0, 0, 0, 0.24);
+  padding: 0;
+  transition: opacity 120ms ease-in-out;
+  position: relative;
+}
+
+.material.dialog.small {
+  min-height: 48px;
+  flex-direction: row;
+}
+
+.material.dialog-title {
+  display: block;
+  margin: 20px 20px 16px;
+  font-size: 16px;
+  font-weight: 600;
+  flex: 0 1;
+}
+
+.material.dialog-text {
+  display: block;
+  margin: 0 20px 20px;
+  font-size: 14px;
+  font-weight: 400;
+  flex: 1 1;
+}
+
+.material.dialog.button-container {
+  display: block;
+  flex: 0 0;
+}
+
+.material.dialog-button-right {
+  display: inline-block;
+  float: right;
+  margin: 8px;
+}
+
+.material.dialog-button-left {
+  display: inline-block;
+  float: left;
+  margin: 8px;
+}
+
+@keyframes progress-round-spin {
+  0% {
+    transform: rotate(45deg);
+  }
+  100% {
+    transform: rotate(405deg);
+  }
+}
+
+.material.progress-round {
+  display: inline-block;
+  height: 32px;
+  width: 32px;
+  border-collapse: separate;
+  border-top-width: 4px;
+  border-top-style: solid;
+  border-top-color: #1976D2;
+  border-left: transparent solid 4px;
+  border-right: transparent solid 4px;
+  border-bottom: transparent solid 4px;
+  border-radius: 50%;
+  margin: 16px 8px 16px 16px;
+  transform: rotate(45deg);
+  animation: 800ms linear infinite progress-round-spin;
+}
+
+.material.progress-text {
+  display: inline-block;
+  line-height: 64px;
+  margin: 0 16px 0 8px;
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.material.main-container {
+  display: block;
+  margin: calc(56px + 16px) 16px 0;
+}
+
+.material.main-container.with-tabber {
+  margin: calc(56px + 48px + 16px) 16px 0;
+}
+
+@media (min-width: 900px) {
+  .material.main-container {
+    margin: calc(56px + 24px) 24px 0;
+  }
+  .material.main-container.with-tabber {
+    margin: calc(56px + 48px + 24px) 24px 0;
+  }
+}
+
+
+/*
+ * @media stuff
+ */
+
+/* Let's make the font bigger on high-dpi screens */
+@media (min-resolution: 120dpi) {
+  body,
+  .material.tabber {
+    font-size: 16px;
+  }
+  .material.actionbar.title {
+    font-size: 18px;
+  }
+}
