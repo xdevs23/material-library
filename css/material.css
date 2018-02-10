@@ -111,10 +111,14 @@ p {
   font-size: 12px;
 }
 
-.material.button.flat,
+.material.button.flat
 .material.dialog-button-right,
 .material.dialog-button-left {
   background-color: transparent;
+}
+
+.material.dialog-button-right,
+.material.dialog-button-left {
   color: #1976D2;
 }
 
