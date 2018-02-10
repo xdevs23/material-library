@@ -17,6 +17,9 @@
 
 set -e
 
+git clone https://github.com/xdevs23/material-library
+cd material-library
+
 mkdir -p tmp
 
 libs() {
