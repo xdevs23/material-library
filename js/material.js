@@ -577,8 +577,7 @@ var material = {
       ['.material.actionbar'], {
         'background-color': materialStorage.primaryColor
       },
-      ['.material.button.flat',
-      '.material.dialog-button-right',
+      ['.material.dialog-button-right',
       '.material.dialog-button-left'], {
         color: materialStorage.accentColor
       },
@@ -605,14 +604,12 @@ var material = {
       ['.material.textfield:focus'], {
         'border-bottom-color': materialStorage.accentColor
       },
-      ['.material.button.flat:hover',
-      '.material.dialog-button-right:hover',
+      ['.material.dialog-button-right:hover',
       '.material.dialog-button-left:hover'], {
         'background-color':
           getRgbaFromHex(materialStorage.theme.foreground, 0.08)
       },
-      ['.material.button.flat:active',
-      '.material.dialog-button-right:active',
+      ['.material.dialog-button-right:active',
       '.material.dialog-button-left:active'], {
         'background-color':
           getRgbaFromHex(materialStorage.theme.foreground, 0.16)
