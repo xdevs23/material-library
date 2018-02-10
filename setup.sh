@@ -17,7 +17,10 @@
 
 set -e
 
-git clone https://github.com/xdevs23/material-library
+wget 'https://github.com/xdevs23/material-library/archive/master.zip' -O material-library.zip
+unzip material-library.zip
+rm material-library.zip
+mv material-library-master material-library
 cd material-library
 
 mkdir -p tmp
@@ -46,5 +49,7 @@ unzip tmp/roboto.zip -d fonts
 
 echo "Cleaning up"
 rm -rf ./tmp
+
+echo "Done. The library is in material-library/"
 
 exit 0
